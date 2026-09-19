@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.7.11",
+  "package": "liwwyy.sprintlock.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "mixins.sprintlock.refmap.json",
+  "client": [
+    "MixinKeyBinding"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

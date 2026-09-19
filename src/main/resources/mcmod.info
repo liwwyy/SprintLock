@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "${id}",
+    "name": "${name}",
+    "description": "A PolySprint-style key-state sprint lock for Minecraft 1.8.9.",
+    "version": "${version}",
+    "mcversion": "${mcVersionStr}",
+    "url": "https://github.com/liwwyy/SprintLock",
+    "updateUrl": "",
+    "authorList": ["liwwyy"],
+    "credits": "Built with OneConfig and the Polyfrost Gradle Toolkit.",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

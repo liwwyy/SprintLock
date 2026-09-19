@@ -1,0 +1,44 @@
+name: Build and Release SprintLock
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Build
+        run: ./gradlew :1.8.9-forge:clean :1.8.9-forge:build --stacktrace
+
+      - name: Find built JAR
+        id: jar
+        shell: bash
+        run: |
+          JAR=$(find versions/1.8.9-forge/build/libs -maxdepth 1 -type f -name '*.jar' ! -name '*-dev.jar' | head -n 1)
+          test -n "$JAR"
+          echo "path=$JAR" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ github.run_number }}
+          name: SprintLock v${{ github.run_number }}
+          generate_release_notes: true
+          files: ${{ steps.jar.outputs.path }}
+          prerelease: false
