@@ -2,7 +2,7 @@
 
 ![Powered by OneConfig](https://polyfrost.org/media/branding/badges/badge_1.svg)
 
-A lightweight Minecraft 1.8.9 Forge mod that keeps the sprint key locked on.
+A lightweight Minecraft 1.8.9 Forge mod by **liwwyy** that keeps the sprint key locked on.
 
 ### Features
 - OneConfig toggle: **Enable Sprint Lock**

@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class MixinKeyBinding {
     @Inject(method = "setKeyBindState", at = @At("HEAD"), cancellable = true)
     private static void sprintlock$keepSprintKeyDown(int keyCode, boolean pressed, CallbackInfo ci) {
-        if (!SprintLockConfig.enabled || pressed) {
+        if (!SprintLockConfig.sprintLockEnabled || pressed) {
             return;
         }
 

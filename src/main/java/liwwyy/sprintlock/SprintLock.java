@@ -31,7 +31,7 @@ public class SprintLock {
 
     @SubscribeEvent
     public void onClientTick(TickEvent.ClientTickEvent event) {
-        if (event.phase != TickEvent.Phase.END || !SprintLockConfig.enabled) {
+        if (event.phase != TickEvent.Phase.END || !SprintLockConfig.sprintLockEnabled) {
             return;
         }
 

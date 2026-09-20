@@ -13,7 +13,7 @@ public class SprintLockConfig extends Config {
             name = "Enable Sprint Lock",
             size = OptionSize.SINGLE
     )
-    public static boolean enabled = true;
+    public static boolean sprintLockEnabled = true;
 
     public SprintLockConfig() {
         super(new Mod(SprintLock.NAME, ModType.UTIL_QOL), SprintLock.MODID + ".json");
